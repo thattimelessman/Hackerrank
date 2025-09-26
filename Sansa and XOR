@@ -1,0 +1,12 @@
+int sansaXor(int arr_count, int* arr) {
+    int result = 0;
+
+    // If arr_count is odd, XOR all elements at even indices (0-based)
+    if (arr_count % 2 != 0) {
+        for (int i = 0; i < arr_count; i += 2) {
+            result ^= arr[i];
+        }
+    }
+
+    return result;
+}
