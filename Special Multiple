@@ -1,0 +1,29 @@
+#define MAX_QUEUE 10000
+#define MAX_LEN 105
+#define MAX_N 505
+
+typedef struct {
+    char num[MAX_LEN];
+    int rem;
+} Node;
+
+typedef struct {
+    Node data[MAX_QUEUE];
+    int front, rear;
+} Queue;
+
+void initQueue(Queue* q) {
+    q->front = q->rear = 0;
+}
+
+bool isEmpty(Queue* q) {
+    return q->front == q->rear;
+}
+
+void enqueue(Queue* q, Node val) {
+    q->data[q->rear++] = val;
+}
+
+Node dequeue(Queue* q) {
+    return q->data[q->front++];
+}
